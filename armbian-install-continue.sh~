@@ -39,7 +39,7 @@ sudo apt install python3-numpy python3-matplotlib libgeos-dev python3-geoip2 pyt
 ##Clone PiNode-XMR to device from git
 echo -e "\e[32mDownloading PiNode-XMR files\e[0m"
 sleep 3
-git clone -b odroid_xu4_hc1_hc2 --single-branch https://github.com/ChiefGyk/PiNode-XMR.git
+git clone -b Armbian-install --single-branch https://github.com/monero-ecosystem/PiNode-XMR.git
 
 
 ##Configure ssh security. Allows only user 'pinodexmr'. Also 'root' login disabled via ssh, restarts config to make changes
@@ -51,6 +51,7 @@ sudo chown root /etc/ssh/sshd_config
 sudo /etc/init.d/ssh restart
 echo -e "\e[32mSSH security config complete\e[0m"
 sleep 3
+
 
 ##Enable PiNode-XMR on boot
 echo -e "\e[32mEnable PiNode-XMR on boot\e[0m"

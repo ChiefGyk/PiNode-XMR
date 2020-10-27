@@ -51,7 +51,7 @@ sudo sysctl -p
 #Download stage 2 Install script
 echo -e "\e[32mDownloading stage 2 Installer script\e[0m"
 sleep 3
-wget https://raw.githubusercontent.com/monero-ecosystem/PiNode-XMR/Armbian-install/armbian-install-continue.sh
+wget https://raw.githubusercontent.com/ChiefGyk/PiNode-XMR/odroid_xu4_hc1_hc2/armbian-install-continue.sh
 sudo mv /root/armbian-install-continue.sh /home/pinodexmr/
 sudo chown pinodexmr /home/pinodexmr/armbian-install-continue.sh
 sudo chmod 755 /home/pinodexmr/armbian-install-continue.sh
