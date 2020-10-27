@@ -796,6 +796,5 @@ sleep 10
 			UUID=$(lsblk -o UUID,LABEL | grep XMRBLOCKCHAIN | awk '{print $1}' | sed -n 1p) #
 			$SUDO sed -i '3d' /etc/fstab #removes existing entry if this script has run before (delete 3rd line fstab)
 			$SUDO sed "2 a UUID=${UUID} /media/xmrblockchain udf noexec,defaults 0 2" -i /etc/fstab
-			$SUDO sed "2 a UUID=5f9659908dc25013 /media/xmrblockchain udf noexec,defaults 0 2" -i /etc/fstab
 			whiptail --title "PiNode-XMR Storage Setup Finished" --msgbox "Your storage device has been configured for use with PiNode-XMR\n\nPress OK to continue..." 20 60
 			./setup.sh
