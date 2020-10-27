@@ -24,8 +24,6 @@ DEVICE_IP="$(hostname -I | awk '{print $1}')"
 	. /home/pinodexmr/i2p-tx-proxy-port.sh
 	#Import ADD_I2P_PEER (seed) port
 	. /home/pinodexmr/add-i2p-peer.sh
-	#Import Block Size
-	. /home/pinodexmr/block-sync-size.sh
 
 #Update power cycle reboot state
 	echo "#!/bin/sh
