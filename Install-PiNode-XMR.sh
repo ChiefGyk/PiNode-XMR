@@ -30,7 +30,7 @@ case $CHOICE in
 		#Commands for Armbian
 		echo -e "\e[32mDownloading data for install\e[0m"
 		sleep 3
-		wget https://raw.githubusercontent.com/monero-ecosystem/PiNode-XMR/Armbian-install/armbian-installer.sh
+		wget https://raw.githubusercontent.com/ChiefGyk/PiNode-XMR/odroid_xu4_hc1_hc2/armbian-installer.sh
 		echo -e "\e[32mPiNode-XMR Armbian configuration file received\e[0m"
 		echo -e "\e[32mStarting Installation\e[0m"
 		sudo chmod 755 ~/armbian-installer.sh
