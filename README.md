@@ -1,3 +1,4 @@
+Optimized for Odroid by ChiefGyk for testing, use at your own risk
 ![PiNode-XMR logo](https://github.com/monero-ecosystem/PiNode-XMR/blob/master/Screenshots/PiNode-XMR%20logo.jpg)
 # User Manual v3.20.04-Open-Build		
 #### Self Install Open Source Build for Raspbian (Raspberry Pi) & Armbian Debian Buster (For all other devices)
@@ -127,7 +128,7 @@ This project can now self install on top of an Armbian Debian OS in an effort to
 ### Raspberry Pi
 Install your Raspbian OS as usual and ideally SSH into it as user `pi` and enter
 
-`wget -O - https://raw.githubusercontent.com/monero-ecosystem/PiNode-XMR/master/Install-PiNode-XMR.sh | bash`
+`wget -O - https://raw.githubusercontent.com/ChiefGyk/PiNode-XMR/odroid-master/Install-PiNode-XMR.sh | bash`
 
 You will see the screenshot above to make your selection. Follow the on screen instructions.
 
