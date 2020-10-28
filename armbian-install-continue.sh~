@@ -121,7 +121,7 @@ echo -e "\e[32m****************************************************\e[0m"
 echo -e "\e[32m****************************************************\e[0m"
 sleep 10
 cd monero
-USE_SINGLE_BUILDDIR=1 make
+USE_SINGLE_BUILDDIR=1 make -j2
 cd
 #Make dir .bitmonero to hold lmdb. Needs to be added before drive mounted to give mount point. Waiting for monerod to start fails mount.
 mkdir .bitmonero
@@ -134,7 +134,7 @@ git clone https://github.com/moneroexamples/onion-monero-blockchain-explorer.git
 cd onion-monero-blockchain-explorer
 mkdir build && cd build
 cmake ..
-make
+make -j2
 cd
 
 ##Install crontab

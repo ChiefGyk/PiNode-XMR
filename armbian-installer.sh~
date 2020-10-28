@@ -67,7 +67,7 @@ if (whiptail --title "PiNode-XMR Armbian Installer" --yesno "For Monero to compi
 			echo -e "\e[32mConfiguring 2GB Swap file (required for Monero build)\e[0m"
 			yes n | sudo apt install dphys-swapfile -y
 			sleep 3
-			wget https://raw.githubusercontent.com/ChiefGyk/PiNode-XMR/odroid_xu4_hc1_hc2/etc/dphys-swapfile
+			wget https://raw.githubusercontent.com/monero-ecosystem/PiNode-XMR/Armbian-install/etc/dphys-swapfile
 			sudo mv /root/dphys-swapfile /etc/dphys-swapfile
 			sudo chmod 664 /etc/dphys-swapfile
 			sudo chown root /etc/dphys-swapfile
