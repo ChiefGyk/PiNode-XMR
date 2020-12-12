@@ -5,14 +5,12 @@ sudo iptables -I OUTPUT -p tcp -d 127.0.0.1 -m tcp --dport 18081 -j ACCEPT
 . /home/pinodexmr/bootstatus.sh
 
 #Establish IP
-	DEVICE_IP="$(hostname -I)"
-#Output onion address
-sudo cat /var/lib/tor/hidden_service/hostname > /var/www/html/onion-address.txt
+	DEVICE_IP="$(hostname -I | awk '{print $1}')"
 
 #Load Variables
 . /home/pinodexmr/current-ver.sh
 . /home/pinodexmr/monero-port.sh
-. /home/pinodexmr/setupcomplete.sh
+. /home/pinodexmr/explorer-flag.sh
 
 echo $CURRENT_VERSION 'Current Version'
 echo $DEVICE_IP 'Device IP'
@@ -23,7 +21,7 @@ sleep 3
 
 if [ $BOOT_STATUS -eq 2 ]
 then
-		echo "Fist boot complete, system ready for first run command. See web-ui at $(hostname -I) for launch buttons."
+		echo "Boot complete, system ready for start. See web-ui at $(hostname -I) to interface."
 else
 	echo "loading ."	
 fi
@@ -49,18 +47,34 @@ then
 	sudo systemctl start monerod-start-mining.service
 	echo "Monero Solo Mining Node Started in background"
 else
-		echo "loading ..."
+		echo "loading ...."
 fi
 
 if [ $BOOT_STATUS -eq 6 ]
 then
 	sudo systemctl start monerod-start-public.service
-	echo "Monero Public Node Started in background"
+	echo "Monero Public Node (RPC_Pay) Started in background"
 else
-		echo "loading ..."
+		echo "loading ....."
 fi
 
-if [ $BOOT_STATUS -gt 2 ] || [ $SETUP_COMPLETE -eq 1 ]
+if [ $BOOT_STATUS -eq 7 ]
+then
+	sudo systemctl start monerod-start-free.service
+	echo "Monero Free Public Node Started in background"
+else
+		echo "loading ......"
+fi
+
+if [ $BOOT_STATUS -eq 8 ]
+then
+	sudo systemctl start monerod-start-i2p.service
+	echo "Monero I2P Node Started in background"
+else
+		echo "loading ......."
+fi
+
+if [ $BOOT_STATUS -gt 2 ] && [ $EXPLORER_START -eq 1 ]
 then
 	echo "Start Monero-onion-block-explorer"
 	sudo systemctl start explorer-start.service

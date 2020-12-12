@@ -1,17 +1,17 @@
 [Unit]
-Description=Monero Node
+Description=Monero Public Node
 After=network.target
 
 [Service]
 ExecStart=/bin/bash monerod-start-public.sh
 WorkingDirectory=/home/pinodexmr/
-StandardOutput=inherit
-StandardError=inherit
-Type=forking
-PIDFile=/home/pinodexmr/monero-active/monerod.pid
+Type=simple
 Restart=always
 RestartSec=30
 User=pinodexmr
+StandardOutput=null
+StandardError=null
 
 [Install]
 WantedBy=multi-user.target
+
